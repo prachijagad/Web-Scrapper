@@ -11,7 +11,7 @@ import time
 # Configuration
 chrome_options = Options()
 chrome_options.add_argument("--headless")  # Run in headless mode (without GUI)
-service = Service(r'C:\Users\prach\Downloads\chromedriver-win64\chromedriver-win64\chromedriver.exe')  # Replace with the path to your WebDriver
+service = Service(r'Driver\chromedriver.exe')  # Replace with the path to your WebDriver
 
 driver = webdriver.Chrome(service=service, options=chrome_options)
 
