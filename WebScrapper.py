@@ -51,13 +51,6 @@ def scrape_content(soup):
 
 def login(driver, login_url, username, password):
     try:
-        #--------------------------------------------
-        # driver.get(login_url)
-        # time.sleep(3)  # Adjust as necessary
-        # driver.find_element(By.ID, 'login').send_keys(username)
-        # driver.find_element(By.ID, 'password').send_keys(password)
-        # driver.find_element(By.ID, 'commit').click()
-        # -----------------------------------------------
         driver.get(login_url)
         # Wait for the username field to be present and interactable
         WebDriverWait(driver, 100).until(
@@ -74,10 +67,6 @@ def login(driver, login_url, username, password):
             EC.element_to_be_clickable((By.NAME, 'commit'))
         ).click()
         
-        # Wait for a successful login, e.g., the presence of an element on the post-login page
-        # WebDriverWait(driver, 20).until(
-        #     EC.presence_of_element_located((By.XPATH, '//*[@id="js-pjax-container"]/div[1]/div/div/h2'))  # Adjust the locator as necessary
-        # )
         time.sleep(5)  # Wait for login to complete
     except Exception as e:
         print(f"Error logging in at {login_url}: {e}")
